@@ -1,7 +1,7 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import pic2 from "./assets/pic2.jpg";
-import pic1 from "../public/perfume/pic1.jpg";
+import pic1 from "/perfume/pic1.jpg";
 
 const About = () => {
   return (
