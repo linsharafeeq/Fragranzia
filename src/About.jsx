@@ -49,13 +49,13 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="flex lg:flex-col  ">
+        <div className="flex lg:flex-col ">
           <img
             src={pic2}
             alt="Perfume"
             className="hidden md:flex md:w-96  lg:w-[900px]  h-42 md:h-60 rounded-tl-[40px] rounded-br-[40px] 
  md:rounded-tl-[60px] md:rounded-br-[60px] 
- lg:rounded-tl-[80px] lg:rounded-br-[80px]  "
+ lg:rounded-tl-[80px] lg:rounded-br-[80px] "
           />
 
           <img
@@ -63,7 +63,7 @@ const About = () => {
             alt="Perfume"
             className=" hidden md:flex md:w-96 lg:w-[900px] h-42 md:h-60 rounded-tr-[40px] rounded-bl-[40px] 
  md:rounded-tr-[60px] md:rounded-bl-[60px] 
- lg:rounded-tr-[80px] lg:rounded-bl-[80px]  "
+ lg:rounded-tr-[80px] lg:rounded-bl-[80px] "
           />
         </div>
       </div>

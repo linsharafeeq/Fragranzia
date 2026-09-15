@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 html {
@@ -7,12 +8,27 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   background-color: #ffffff !important;
   color: #000000 !important;
+  color-scheme: light !important;
 }
 
 #root {
   min-height: 100vh;
   background-color: #ffffff !important;
   color: #000000 !important;
+  color-scheme: light !important;
 }
+
+/* Prevent mobile browsers from applying dark-mode colors */
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  #root {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    color-scheme: light !important;
+  }
+}
+
