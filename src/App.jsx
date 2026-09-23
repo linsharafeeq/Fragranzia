@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import "./App.css";
 import Signup from "./Signup";
@@ -21,7 +21,15 @@ import Profile from "./Profile";
 function App() {
   const [cartItems, setCartItems] = useState([]);
 const [buyNowItem, setBuyNowItem] = useState(null);
-const [orders, setOrders] = useState([]);
+const [orders, setOrders] = useState(() => {
+  const savedOrders = localStorage.getItem("orders");
+  return savedOrders ? JSON.parse(savedOrders) : [];
+});
+
+useEffect(() => {
+  localStorage.setItem("orders", JSON.stringify(orders));
+}, [orders]);
+
 
 const [searchTerm, setSearchTerm] = useState("");
 
@@ -97,7 +105,7 @@ const removeFromCart = (id) => {
         <Route element={<Layout       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm} />}>
 
-        <Route path="/" element={<Home  addToCart={addToCart} />} />
+        <Route path="/Home" element={<Home  addToCart={addToCart} />} />
         <Route path="/products" element={<Products addToCart={addToCart}  searchTerm={searchTerm}/>} />
         <Route path="/products/:id" element={<ProductDetails addToCart={addToCart}       buyNow={buyNow} />} />
 
@@ -125,7 +133,7 @@ const removeFromCart = (id) => {
       
 
  <Route path="/signin" element={<Signin/>}/>
-        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/" element={<Signup/>}/>
 
       </Routes>
       <ToastContainer

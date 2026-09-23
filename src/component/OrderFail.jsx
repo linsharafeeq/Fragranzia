@@ -24,7 +24,7 @@ const OrderFail=()=>{
 <div className="mt-4 flex gap-4 items-center justify-center">
 
     <button
-    onClick={()=>navigate("/")}
+    onClick={()=>navigate("/Home")}
     className=" rounded-md border-[2px]  border-[#00354B] text-base font-semibold text-black w-[200px] py-2"
     >
          Back to Home
@@ -32,7 +32,7 @@ const OrderFail=()=>{
 
 
 <button
-    // onClick={()=>navigate("/")}
+    
     className=" rounded-md border-[2px] border-[#00354B] bg-[#00354B] text-base font-semibold text-white w-[200px] py-2"
     >
         Retry

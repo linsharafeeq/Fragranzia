@@ -29,7 +29,7 @@ const searchResults =
         <div className="hidden lg:flex items-center gap-10">
           <ul className="flex items-center text-black/80  gap-10 text-md font-sm">
             <NavLink
-              to="/"
+              to="/Home"
               className={({ isActive }) =>
                 isActive
                   ? "text-[#0B3954] font-bold"
@@ -167,7 +167,7 @@ const searchResults =
             <ul className="flex flex-col text-center text-md  ">
               <li className=" border-b-1 border-black/20">
                 <NavLink
-                  to="/"
+                  to="/Home"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     `block p-3 ${

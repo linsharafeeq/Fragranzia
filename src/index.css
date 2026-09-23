@@ -1,15 +1,11 @@
 
 @import "tailwindcss";
 
-/*
-  Tailwind v4 dark mode fix:
-  Override the dark variant to only trigger on a manual `.dark` class,
-  which we never add — so Tailwind's auto dark styles never apply.
-*/
+
 @variant dark (&:where(.dark, .dark *));
 
 html {
-  color-scheme: light !important;
+  color-scheme: only light !important;
   background-color: #ffffff !important;
 }
 
@@ -18,14 +14,14 @@ body {
   min-height: 100vh;
   background-color: #ffffff !important;
   color: #000000 !important;
-  color-scheme: light !important;
+  color-scheme: only light !important;
 }
 
 #root {
   min-height: 100vh;
   background-color: #ffffff !important;
   color: #000000 !important;
-  color-scheme: light !important;
+  color-scheme: only light !important;
 }
 
 /* Hard override: prevent OS dark mode from leaking in */
@@ -35,7 +31,7 @@ body {
   #root {
     background-color: #ffffff !important;
     color: #000000 !important;
-    color-scheme: light !important;
+    color-scheme: only light !important;
   }
 }
 

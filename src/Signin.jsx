@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import pic2 from "./assets/pic2.jpg";
 import google from "./assets/google.png";
 
@@ -12,7 +12,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-
+const navigate= useNavigate();
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-5  lg:px-16  ">
       <div className="max-w-10xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
@@ -93,13 +93,15 @@ const Signin = () => {
      className=" text-end pb-4  text-[#00354B] underline  cursor-pointer ">Forgot Password?</div>
 
 
-<button className="w-full h-10 sm:h-12 bg-[#083D57] text-center cursor-pointer rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
-    Log In
+<button  onClick={()=>navigate("/Home")}
+className="w-full h-10 sm:h-12 bg-[#083D57] text-center cursor-pointer rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
+   Sign In
 </button>
 
 <p className="text-center mt-2 text-sm sm:text-base text-gray-700">
                 Don't have an account?{" "} 
-<span className=" text-[#083D57] underline cursor-pointer">
+<span onClick={()=>navigate("/")}
+className=" text-[#083D57] underline cursor-pointer">
     Sign Up
 </span>
 </p>

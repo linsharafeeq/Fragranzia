@@ -1,63 +1,63 @@
-const ProfileMyOrder =({ orders=[] })=>{
+const ProfileMyOrder = ({ orders = [] }) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-9 mt-6">
+      {orders.map((order) => {
+        const item = order.items?.[0];
 
-    
+        return (
+          <div
+            key={order.id}
+            className="w-full h-[155px] rounded-lg border border-gray-300 bg-white px-3 py-3"
+          >
+            {/* Top row */}
+            <div className="flex items-center justify-between">
+              <h3 className="text-[16px] font-semibold text-black">
+                Order ID: #{order.id}
+              </h3>
 
-    return(
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 ">
-{orders.map((order)=>
-<div
-className=" rounded-md p-3  shadow-[0_0_3px_rgba(0,0,0,0.20)] ">
+              <span
+                className={`px-3 py-2 rounded-md text-[12px] font-semibold text-white ${
+                  order.status === "Delivered"
+                    ? "bg-green-700"
+                    : "bg-[#c9930a]"
+                }`}
+              >
+                {order.status || "Delivered"}
+              </span>
+            </div>
 
-<div className="flex justify-between  items-center">
-    <h3 className="font-semibold text-sm">
-        Order ID:#{order.id}
-    </h3>
+            {/* Product */}
+            <div className="flex items-center mt-3">
+              
+              {/* Product image */}
+              <div className="w-[85px] h-[80px] flex items-center justify-center flex-shrink-0">
+                <img
+                  src={item?.image}
+                  alt={item?.name}
+                  className="w-[85px] h-[80px] object-contain"
+                />
+              </div>
 
-    <span
-    className={`text-white text-xs px-2 py-1  rounded-md ${
-order.status === "Delivered"
-? "bg-green-700"
-:"bg-yellow-600"
-    }`}
-    >
-       {order.status}
-    </span>
-</div>
+              {/* Product information */}
+              <div className="ml-3">
+                <h4 className="text-[15px] font-semibold text-black">
+                  {item?.name}
+                </h4>
 
-{/* Product Details */}
+                <p className="text-[14px] text-gray-600 mt-1">
+                  Qty: {item?.quantity || 1}
+                </p>
 
-<div className="flex items-center">
-
-    <img
-     src={order.image}
-      alt={order.productName}
-      className="w-30 h-30 object-contain"
-      />
-<div>
-<h4 className="font-semibold">
-    {order.productName}
-</h4>
-
-<p className="text-gray-600 text-sm mt-1">
-Qty:{order.quantity}
-</p>
-
-<p className="font-bold text-xl mt-1">
-    Rs {order.price.toLocaleString("en-IN")}
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-)}
-        </div>
-    );
+                <p className="text-[20px] font-bold text-black mt-1">
+                  ₹{Number(item?.price || 0).toLocaleString("en-IN")}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default ProfileMyOrder;

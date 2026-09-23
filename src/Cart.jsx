@@ -14,7 +14,7 @@ return(
           </h1>
 
           <div className=" hidden md:flex items-center  gap-1 text-xs md:text-sm text-gray-500 mt-0 md:mt-1">
-            <Link to="/" className="hover:text-[#00354B] transition">
+            <Link to="/Home" className="hover:text-[#00354B] transition">
               Home
             </Link>
 

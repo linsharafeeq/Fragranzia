@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import signupImg from "./assets/signup.jpg";
 import google from "./assets/google.png";
@@ -12,7 +13,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-
+const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-5  lg:px-16">
       <div className="max-w-10xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
@@ -122,13 +123,15 @@ className="accent-[#00354B] " />
 </p>
 </div>
 
-<button className="w-full h-10 sm:h-12 bg-[#083D57] cursor-pointer text-center rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
+<button onClick={()=>navigate("/Home")}
+className="w-full h-10 sm:h-12 bg-[#083D57] cursor-pointer text-center rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
     Sign Up
 </button>
 
 <p className="text-center mt-2 text-sm sm:text-base text-gray-700">
                 Already have an account?{" "} 
-<span className=" text-[#083D57] underline cursor-pointer">
+<span onClick={()=>navigate("/signin")}
+className=" text-[#083D57] underline cursor-pointer">
     Sign In
 </span>
 </p>

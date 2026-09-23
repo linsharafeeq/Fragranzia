@@ -23,7 +23,7 @@ const Footer=()=>{
 <ul className="flex flex-col gap-3 text-sm md:text-base">
     <li>
         <Link
-        to="/"
+        to="/Home"
         className="hover:text-[#00354B] transition"
         >
         Home

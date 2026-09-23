@@ -6,13 +6,20 @@ import ProfileAddress from "./component/ProfileAddress";
 import ProfileMyOrder from "./component/ProfileMyOrder";
 
 
-const Profile=()=>{
+const Profile=({ orders })=>{
     
-const [activeTab, setActiveTab]=useState("profile");
+const [activeTab, setActiveTab] = useState(() => {
+  return localStorage.getItem("profileTab") || "profile";
+});
+const handleTabChange = (tab) => {
+  setActiveTab(tab);
+  localStorage.setItem("profileTab", tab);
+};
+
 const location = useLocation();
 useEffect(() => {
   if (location.state?.openAddressModal) {
-    setActiveTab("address");
+     handleTabChange("address");
   }
 }, [location.state]);
     return(
@@ -24,7 +31,7 @@ useEffect(() => {
               Profile
             </h1>
             <div className=" hidden md:flex items-center  gap-1 text-xs md:text-sm text-gray-500 mt-0 md:mt-1">
-              <Link to="/" className="hover:text-[#00354B] transition">
+              <Link to="/Home" className="hover:text-[#00354B] transition">
                 Home
               </Link>
 
@@ -35,7 +42,7 @@ useEffect(() => {
 
 <div className="flex gap-4 md:gap-8 mt-4 ">
 <button 
-onClick={()=>setActiveTab("profile")}
+onClick={()=>handleTabChange("profile")}
 className={`w-[200px] rounded-md py-3 ${
     activeTab === "profile"
     ? "bg-[#00354B] text-white"
@@ -46,7 +53,7 @@ className={`w-[200px] rounded-md py-3 ${
 </button>
 
 <button 
-onClick={()=>setActiveTab("address")}
+onClick={()=>handleTabChange("address")}
 className={`w-[200px] rounded-md py-3 ${
     activeTab === "address"
     ? "bg-[#00354B] text-white"
@@ -57,7 +64,7 @@ className={`w-[200px] rounded-md py-3 ${
 </button>
 
 <button 
-onClick={()=>setActiveTab("orders")}
+onClick={()=>handleTabChange("orders")}
 className={`w-[200px] rounded-md py-3 ${
     activeTab === "orders"
     ? "bg-[#00354B] text-white"
@@ -76,7 +83,7 @@ className={`w-[200px] rounded-md py-3 ${
     openModal={location.state?.openAddressModal}
    />}
 
-      {activeTab === "orders" && <ProfileMyOrder />} 
+      {activeTab === "orders" && <ProfileMyOrder orders={orders} />} 
 
         </section>
     )
