@@ -18,7 +18,7 @@ const navigate = useNavigate();
     <div className="min-h-screen bg-white flex items-center justify-center px-5  lg:px-16">
       <div className="max-w-10xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         {/* left */}
-        <div className="relative h-[320px]  sm:h-[380px] lg:h-[500px]  lg:w-[500px] overflow-hidden rounded-3xl sm:rounded-3xl lg:rounded-tr-[200px] lg:rounded-bl-[200px] lg:rounded-tl-[0px] lg:rounded-br-[0px]">
+        <div className="relative h-[280px]  sm:h-[360px] lg:h-[500px]  lg:w-[500px] overflow-hidden rounded-3xl sm:rounded-3xl lg:rounded-tr-[200px] lg:rounded-bl-[200px] lg:rounded-tl-[0px] lg:rounded-br-[0px]">
           <img
             src={signupImg}
             alt="perfume"
@@ -124,7 +124,7 @@ className="accent-[#00354B] " />
 </div>
 
 <button onClick={()=>navigate("/Home")}
-className="w-full h-10 sm:h-12 bg-[#083D57] cursor-pointer text-center rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
+className="w-full h-12 sm:h-14 bg-[#083D57] cursor-pointer text-center rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
     Sign Up
 </button>
 

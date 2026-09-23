@@ -94,7 +94,7 @@ const navigate= useNavigate();
 
 
 <button  onClick={()=>navigate("/Home")}
-className="w-full h-10 sm:h-12 bg-[#083D57] text-center cursor-pointer rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
+className="w-full h-12 sm:h-14 bg-[#083D57] text-center cursor-pointer rounded-lg text-white text-lg sm:text-xl font-semibold transition-all">
    Sign In
 </button>
 

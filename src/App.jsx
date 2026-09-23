@@ -19,7 +19,12 @@ import CheckoutPage from "./CheckoutPage";
 import NavOnlyLayout from "./component/NavOnlyLayout";
 import Profile from "./Profile";
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+  const savedCart = localStorage.getItem("cartItems");
+  return savedCart ? JSON.parse(savedCart) : [];
+});
+
+
 const [buyNowItem, setBuyNowItem] = useState(null);
 const [orders, setOrders] = useState(() => {
   const savedOrders = localStorage.getItem("orders");
@@ -29,7 +34,9 @@ const [orders, setOrders] = useState(() => {
 useEffect(() => {
   localStorage.setItem("orders", JSON.stringify(orders));
 }, [orders]);
-
+useEffect(() => {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}, [cartItems]);
 
 const [searchTerm, setSearchTerm] = useState("");
 
