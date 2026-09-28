@@ -37,8 +37,8 @@ className="px-3 py-1 text-[#00354B] ">
 
 
 
-<div className="flex gap-4 mt-2 ">
-  <span className="text-xl font-bold">
+<div className="flex gap-2 md:gap-2 mt-2 ">
+  <span className="text-lg sm:text-xl font-bold">
     Rs {item.price }
   </span>
  <span className="text-gray-500 line-through">

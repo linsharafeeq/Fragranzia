@@ -9,7 +9,7 @@ const Cart=({ cartItems,   increaseQuantity,removeFromCart,
 return(
     <section className=" lg:flex  items-start justify-between px-2 py-2 mb-4  md:px-6 lg:px-8">
         <div className="w-full">
-              <h1 className="text-lg md:text-xl  lg:text-2xl font-bold">
+              <h1 className="px-2 sm:px-4 md:px-0 text-lg md:text-xl  lg:text-2xl font-bold">
           Cart
           </h1>
 

@@ -49,14 +49,14 @@ const ProductCard = ({ item, showBadge = false, addToCart, badgeText = "New" }) 
         <p className="hidden md:block font-semibold text-base md:text-xl">{item.subtitle}</p>
 
         <div className="flex items-center gap-3">
-          <span className="text-xl md:text-2xl font-bold">RS {item.price}</span>
+          <span className="text-lg sm:text-xl md:text-2xl font-bold">RS {item.price}</span>
           <span className="line-through text-gray-500">RS {item.oldPrice}</span>
         </div>
  </div>
    </div>
     </Link>
         <button 
-        className="mt-2 md:mt-3 w-full bg-[#00354B] text-white py-2 rounded-md hover:bg-[#02283A] transition"
+        className="w-full bg-[#00354B] text-white py-3 rounded-md hover:bg-[#02283A] transition"
         onClick={handleAddToCart}
         >
           Add to Cart

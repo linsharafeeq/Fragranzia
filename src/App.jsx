@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 import "./App.css";
 import Signup from "./Signup";
 import Signin from "./Signin";
-
+import ScrollToTop from "./component/ScrollToTop";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
@@ -106,7 +106,7 @@ const removeFromCart = (id) => {
 };
   return (
     <>
-
+ <ScrollToTop />
       <Routes>
 
         <Route element={<Layout       searchTerm={searchTerm}
