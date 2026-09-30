@@ -7,7 +7,7 @@ import BlobSphere from "./BlobSphere";
 const Cards = () => {
   return (
     <section className="px-2 md:px-6 lg:px-8 py-2 md:py-4">
-      <div className="max-w-7xl  mx-auto  ">
+      <div className="w-full  mx-auto  ">
        <div className="grid grid-cols-3 gap-2 md:gap-6">
           <div className="bg-[#E7E7E7] rounded-md md:rounded-2xl flex  justify-between p-2 md:p-4 lg:p-6 overflow-hidden h-24 md:h-40 lg:h-50 ">
             <div  className=" flex-1 ">

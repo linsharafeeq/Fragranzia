@@ -28,7 +28,7 @@ const ProductCard = ({ item, showBadge = false, addToCart, badgeText = "New" }) 
          lg:rounded-tl-[80px] lg:rounded-br-[80px] lg:rounded-tr-[0px] lg:rounded-bl-[0px]
        hover:lg:rounded-tl-[0px] hover:lg:rounded-br-[0px] hover:lg:rounded-tr-[80px] hover:lg:rounded-bl-[80px]
       transition-all duration-500 ease-in-out
-           overflow-hidden p-6 h-36 sm:h-60 md:h-66 lg:h-78"
+           overflow-hidden p-6 h-36 sm:h-60 md:h-66 lg:h-78 xl:h-[350px]"
       >
         {showBadge && (
           <div className="absolute z-40 w-10 h-10 md:w-20 md:h-0 lg:w-24 lg:h-24 -rotate-28 text-[8px] md:text-[16px] lg:text-lg">
@@ -38,7 +38,7 @@ const ProductCard = ({ item, showBadge = false, addToCart, badgeText = "New" }) 
         <img
           src={item.image}
           alt={item.name}
-          className="w-full object-contain transition duration-600 hover:scale-110"
+          className="w-full  h-full object-contain transition duration-600 hover:scale-110"
         />
       </div>
 
