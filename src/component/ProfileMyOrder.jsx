@@ -1,4 +1,7 @@
+import { useState } from "react";
 const ProfileMyOrder = ({ orders = [] }) => {
+const [showCancelModal, setShowCancelModal] = useState(false);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-9 mt-6">
       {orders.map((order) => {
@@ -15,6 +18,8 @@ const ProfileMyOrder = ({ orders = [] }) => {
                 Order ID: #{order.id}
               </h3>
 
+{/* <div className="flex gap-4 "> */}
+
               <span
                 className={`px-3 py-2 rounded-md text-[12px] font-semibold text-white ${
                   order.status === "Delivered"
@@ -24,6 +29,15 @@ const ProfileMyOrder = ({ orders = [] }) => {
               >
                 {order.status || "Delivered"}
               </span>
+
+              {/* <button
+  onClick={() => setShowCancelModal(true)}
+  className=" px-3 py-2  rounded-md text-[12px] font-semibold text-white bg-red-500"
+>
+  Cancel Order
+</button> */}
+            {/* </div> */}
+
             </div>
 
             {/* Product */}
@@ -52,7 +66,12 @@ const ProfileMyOrder = ({ orders = [] }) => {
                   ₹{Number(item?.price || 0).toLocaleString("en-IN")}
                 </p>
               </div>
-            </div>
+            
+
+
+
+</div>
+
           </div>
         );
       })}

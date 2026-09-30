@@ -78,8 +78,15 @@ const buyNow = (item, quantity = 1) => {
     quantity: quantity,
   });
 };
-
 const increaseQuantity = (id) => {
+  if (buyNowItem && buyNowItem.id === id) {
+    setBuyNowItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity + 1,
+    }));
+    return;
+  }
+
   setCartItems((prevItems) =>
     prevItems.map((item) =>
       item.id === id
@@ -90,6 +97,18 @@ const increaseQuantity = (id) => {
 };
 
 const decreaseQuantity = (id) => {
+  if (buyNowItem && buyNowItem.id === id) {
+    setBuyNowItem((prevItem) =>
+      prevItem.quantity > 1
+        ? {
+            ...prevItem,
+            quantity: prevItem.quantity - 1,
+          }
+        : prevItem
+    );
+    return;
+  }
+
   setCartItems((prevItems) =>
     prevItems.map((item) =>
       item.id === id && item.quantity > 1
